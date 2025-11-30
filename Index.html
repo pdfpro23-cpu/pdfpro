@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pdfpro – Your Daily Tools, All in One Place</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: #f7faff;
+        color: #1a2b4c;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+        background: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 8%;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: #0a5cff;
+    }
+
+    nav a {
+        margin-left: 25px;
+        text-decoration: none;
+        color: #1a2b4c;
+        font-weight: 500;
+    }
+
+    nav a:hover {
+        color: #0a5cff;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+        text-align: center;
+        padding: 80px 10% 60px;
+        background: linear-gradient(135deg, #e8f1ff, #ffffff);
+    }
+
+    .hero h1 {
+        font-size: 40px;
+        font-weight: 800;
+        color: #0a1f44;
+    }
+
+    .hero p {
+        font-size: 18px;
+        color: #4a5c80;
+        margin-top: 10px;
+    }
+
+    .cta-btn {
+        margin-top: 25px;
+        padding: 14px 30px;
+        font-size: 17px;
+        background: #0a5cff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+        background: #004ed9;
+    }
+
+    .hero-icons {
+        margin-top: 35px;
+        opacity: 0.9;
+        font-size: 34px;
+    }
+
+    /* ---------- SEARCH BAR ---------- */
+    .search-wrapper {
+        margin: 40px auto;
+        text-align: center;
+        padding: 0 10%;
+    }
+
+    .search-wrapper input {
+        width: 100%;
+        max-width: 550px;
+        padding: 14px 18px;
+        border-radius: 10px;
+        border: 2px solid #cfd9eb;
+        font-size: 16px;
+        outline: none;
+    }
+
+    .search-wrapper input:focus {
+        border-color: #0a5cff;
+    }
+
+    /* ---------- SECTION HEADINGS ---------- */
+    section {
+        padding: 40px 10% 20px;
+    }
+
+    h2 {
+        font-size: 26px;
+        margin-bottom: 5px;
+        color: #0a1f44;
+    }
+
+    .section-sub {
+        color: #5a6c90;
+        margin-bottom: 25px;
+    }
+
+    /* ---------- TOOL CARDS ---------- */
+    .tool-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 22px;
+    }
+
+    .tool-card {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 14px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+        transition: 0.25s;
+        text-align: left;
+    }
+
+    .tool-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .tool-card h3 {
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .tool-card p {
+        color: #55627a;
+        margin: 8px 0 15px;
+        font-size: 14px;
+    }
+
+    .use-btn {
+        padding: 8px 18px;
+        background: #0a5cff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .use-btn:hover {
+        background: #004ed9;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+        margin-top: 50px;
+        padding: 25px 10%;
+        background: #ffffff;
+        text-align: center;
+        border-top: 1px solid #d8e2f3;
+        color: #5a6c90;
+    }
+
+    footer a {
+        color: #0a5cff;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    /* ---------- MOBILE ---------- */
+    @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">Tools Wonder</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Tools</a>
+        <a href="mailto:pdfpro23@gmail.com">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Your Daily Tools, All in One Place</h1>
+    <p>Convert, calculate, compress, and simplify your everyday tasks — fast and free.</p>
+    <button class="cta-btn">Explore Tools</button>
+
+    <div class="hero-icons">🖼 📄 🔧 🧮</div>
+</div>
+
+<!-- SEARCH BAR -->
+<div class="search-wrapper">
+    <input type="text" placeholder="Search a tool…" id="toolSearch" onkeyup="filterTools()">
+</div>
+
+<!-- IMAGE TOOLS -->
+<section>
+    <h2>🖼 Image Tools</h2>
+    <p class="section-sub">Convert, resize, compress, and enhance your images easily.</p>
+
+    <div class="tool-grid" id="imageTools">
+
+        <div class="tool-card">
+            <h3>Image to PDF</h3>
+            <p>Convert any image into a clean PDF file.</p>
+            <a href="#" class="use-btn">Use Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <h3>Image to JPG</h3>
+            <p>Turn PNG or other formats into JPG instantly.</p>
+            <a href="#" class="use-btn">Use Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <h3>Image Resizer</h3>
+            <p>Resize images without losing quality.</p>
+            <a href="#" class="use-btn">Use Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <h3>Image Cropper</h3>
+            <p>Crop images to your desired dimensions.</p>
+            <a href="#" class="use-btn">Use Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <h3>Image to Text (OCR)</h3>
+            <p>Extract text from images instantly.</p>
+            <a href="#" class="use-btn">Use Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <h3>Image to PNG</h3>
+            <p>Convert images to transparent PNG format.</p>
+            <a href="#" class="use-btn">Use Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <h3>Image to QR</h3>
+            <p>Create QR codes from any image.</p>
+            <a href="#" class="use-btn">Use Tool</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- DOCUMENT TOOLS -->
+<section>
+    <h2>📄 Document Tools</h2>
+    <p class="section-sub">Work smarter with fast, secure document utilities.</p>
+
+    <div class="tool-grid" id="docTools">
+
+        <div class="tool-card">
+            <h3>PDF to Word / Word to PDF</h3>
+            <p>Convert documents between PDF and Word.</p>
+            <a href="#" class="use-btn">Use Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <h3>PDF Compressor</h3>
+            <p>Reduce file size without losing quality.</p>
+            <a href="#" class="use-btn">Use Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <h3>PDF Merger & Splitter</h3>
+            <p>Combine or divide PDF documents easily.</p>
+            <a href="#" class="use-btn">Use Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <h3>Document Converter</h3>
+            <p>Convert between multiple document formats.</p>
+            <a href="#" class="use-btn">Use Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <h3>PDF Lock/Unlock</h3>
+            <p>Password-protect or unlock PDF files.</p>
+            <a href="#" class="use-btn">Use Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <h3>eSign PDF</h3>
+            <p>Sign PDF files electronically in seconds.</p>
+            <a href="#" class="use-btn">Use Tool</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>Contact: <a href="mailto:pdfpro23@gmail.com">pdfpro23@gmail.com</a></p>
+    <p>
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Terms of Use</a>
+    </p>
+</footer>
+
+<!-- SEARCH FILTER SCRIPT -->
+<script>
+function filterTools() {
+    const search = document.getElementById("toolSearch").value.toLowerCase();
+    const cards = document.querySelectorAll(".tool-card");
+
+    cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(search) ? "block" : "none";
+    });
+}
+</script>
+
+</body>
+</html>
